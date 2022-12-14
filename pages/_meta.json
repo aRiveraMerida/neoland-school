@@ -1,15 +1,43 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "index": {
+    "title": "Welcome",
+    "theme": {
+      "toc": false
+    }
+  },
+  "school": {
+    "title": "School",
+    "theme": {
+      "toc": false
+    }
+  },
+  "bootcamp": {
+    "title": "Bootcamp",
+    "theme": {
+      "toc": false
+    }
+  },
+  "courses": {
+    "title": "Cursos",
+    "theme": {
+      "toc": false
+    }
+  },
+  "coding": {
+    "title": "Coding",
+    "theme": {
+      "toc": false
+    }
+  },
+  "contacto": {
+    "title": "Contacto",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Twitter ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://twitter.com/NeolandStudio",
     "newWindow": true
   }
 }
+

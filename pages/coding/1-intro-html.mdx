@@ -1,0 +1,259 @@
+**Introducción**
+---
+
+A lo largo de las diferentes sesiones trabajaremos en detalle las particularidades de este lenguaje de marcado. HTML suele ser la puerta de entrada al mundo del desarrollo, siendo uno de los pilares fundamentales, y sobre este lenguaje comenzaremos nuestro camino.
+
+**Qué vamos a aprender**
+---
+
+ 1. Sintaxis del lenguaje de marcado.
+
+1. Composición de un documento HTML.
+2. Estructura de un documento HTML.
+3. Etiquetas de HTML.
+4. Atributos de HTML.
+5. Buenas prácticas.
+6. Principios de accesibilidad.
+
+**Después del contenido**
+---
+
+1. Capacidad de construir documentos HTML.
+2. Uso de las diferentes etiquetas de HTML.
+3. Aplicar buenas prácticas.
+4. Entender el concepto de accesibilidad y su necesidad.
+
+**Class Example**
+---
+El elemento **HTML5** **input** se usa para crear controles interactivos para formularios basados en la web con el fin de recibir datos del usuario. Es uno de los más potentes y complejos en todo HTML debido a la gran cantidad de combinaciones de tipos y atributos de entrada.
+
+Input de tipo text
+---
+
+El campo de texto, como bien indica su nombre, es el que nos permite insertar texto en un formulario. El usuario podrá insertar texto visible sobre el campo.
+
+```html
+<input type="text" id="identificador" size="tamaño"
+  name="nombre" value="texto por defecto"/>
+```
+
+De esta forma si queremos crear un campo de texto para poder insertar 70 caracteres que contenga un email, lo definiremos de la siguiente forma.
+
+```html
+<input type="text" id="email" name="email"
+  size="70" value="usuario@dominio.com"/>
+```
+
+Input de tipo password
+---
+
+Cuando un usuario inserte una contraseña dentro de un formulario necesitaremos, casi seguro, que el valor de la contraseña no aparezca y que por el contrario aparezcan caracteres como asteriscos.
+
+```html
+<input type="password" id="identificador" size="tamaño" name="nombre"/>
+```
+
+En este caso, aunque podemos poner un valor por defecto, si bien, no parece tener mucho sentido. Si queremos definir un campo que acepte contraseñas de 20 caracteres lo codificaremos de la siguiente forma:
+
+```html
+<input type="password" id="clave" name="clave" size="20"/>
+```
+
+Input checkbox
+---
+
+También tenemos los **checkbox** nos permite capturar un dato del usuario mediante un elemento de check. El **check** puede tener dos valores, seleccionado o no seleccionado. 
+
+```html
+<input type="checkbox" id="identificador" name="nombre"/>
+```
+
+En los **checkbox**  solo podemos tener el check seleccionado o no. Pero lo que sí podemos hacer es generar un checkbox que esta preseleccionado. Para ello utilizamos el atributo **checked**.
+
+```html
+<input type="checkbox" id="identificador" name="nombre" checked="checked"/>
+```
+
+Si os preguntáis para qué podemos usar un **checkbox** tenemos el ejemplo claro de unas condiciones y podríamos representarlo de la siguiente manera.
+
+```html
+<input type="checkbox" id="condiciones" name="condiciones"/>Está de acuerdo con las condiciones explicadas más arriba.
+```
+
+Los checkbox suelen ir en grupos para seleccionar varias opciones. Por ejemplo podríamos tener el siguiente código con el que podamos seleccionar qué lenguaje de programación queremos aprender.
+
+```html
+<input type="checkbox" name="lenguaje" value="html">HTML
+<input type="checkbox" name="lenguaje" value="javascript">Javascript
+<input type="checkbox" name="lenguaje" value="css">CSS
+<input type="checkbox" name="lenguaje" value="xml">XML
+```
+
+Input radio
+---
+
+Con los elementos de radio podemos ofrecer un conjunto de opciones al usuario de tal manera que solo pueda elegir una de ellas. La sintaxis que seguiremos en los elementos input de tipo radio será la siguiente:
+
+```html
+<input type="radio" id="identificador" value="valor" name="nombre"/>
+```
+
+En el caso de los elementos radio toma un papel principal el atributo **name**. Ya que para poder agrupar opciones deberemos de tener el mismo valor de atributo name.
+
+Así, si queremos crear un grupo de radios para que nos elija una edad le podremos crear de la siguiente forma:
+
+```html
+<input type="radio" id="menos18" value="menos18" name="edad"/>Menos de 18
+<input type="radio" id="18a30" value="18a30" name="edad"/>18 a 30
+<input type="radio" id="31a50" value="31a50" name="edad"/>31 a 50
+<input type="radio" id="mas50" value="mas50" name="edad"/>Más de 50
+```
+
+Al igual que sucedía con los campos de entrada de tipo check, podemos cargar campos de tipo radio en nuestro formulario con un elemento preseleccionado. Para ello volvemos a recurrir al atributo **checked**.
+
+```html
+<input type="radio" id="identificador" value="valor" name="nombre" checked="checked"/>
+```
+
+Input file
+---
+
+Cuando diseñemos un formulario es posible que necesitemos enviar un fichero de datos al servidor. En este caso vamos a necesitar un campo de entrada de tipo **file**. La sintaxis de los campos de entrada para tipos file sería:
+
+```html
+<input type="file" id="identificador" value="valor" name="nombre"/>
+```
+
+Text area
+---
+
+Un elemento algo más avanzado que el campo de entrada de datos es el área de texto. Mediante un área de texto tenemos la capacidad de que el usuario inserte una gran cantidad de datos y además que esos datos puedan estar en diferentes líneas.
+
+```html
+<textarea rows="numerofilas" cols="numerocolumnas" name="nombre"></textarea>
+```
+
+A diferencia del elemento input, el **textarea** tiene una etiqueta de inicio y una de fin. Los atributos que nos encontramos en un textarea son:
+
+- **rows**, indica el número de filas que tiene el área de texto.
+- **cols**, indica el número de columnas que tiene el área de texto.
+- **name**, al igual que sucede con otros elementos del formulario, name contiene el nombre del campo, el cual será enviado al servidor para ser procesado.
+
+De esta forma, si queremos crear un área de texto de 20 filas por 100 columnas en el que un usuario pueda insertar un comentario tendríamos el siguiente código:
+
+```html
+<textarea rows="20" cols="100" name="comentario"></textarea>
+```
+
+Si queremos que el área de texto vaya con un valor por defecto, tendremos que añadir dicho contenido entre las etiquetas de textarea.
+
+```html
+<textarea rows="20" cols="100" name="comentario">Contenido de comentario...</textarea>
+```
+
+Select
+---
+
+Otro elemento que podemos insertar dentro de un formulario es un combo de opciones. Es decir, un elemento en el que el usuario pueda elegir un elemento o varios de una lista. El elemento que nos permite insertar un combo de opciones es **select**. La sintaxis básica de un elemento **select** es:
+
+```html
+<select name="nombre"></select>
+```
+
+Para dotar al **select** de contenido tenemos que usar una etiqueta **option** en el interior del **select**.
+
+```html
+<option label="etiqueta" value="valor"></option>
+```
+
+Si queremos crear un combo de opciones donde podamos elegir un equipo de fútbol tendríamos el siguiente código:
+
+```html
+<select name="teams">
+  <option label="Rayo Vallecano" value="Rayo">
+		Rayo Vallecano
+	</option>
+  <option label="St.Pauli" value="Pauli">
+		St.Pauli
+	</option>
+	<option label="Livorno" value="Livorno">
+		Livorno
+	</option>
+</select>
+```
+
+También podemos tener un elemento seleccionado por de el atributo **selected**. 
+
+```html
+<select name="teams">
+  <option label="Rayo Vallecano" value="Rayo">
+		Rayo Vallecano
+	</option>
+  <option label="St.Pauli" value="Pauli" selected="selected">
+		St.Pauli
+	</option>
+	<option label="Livorno" value="Livorno">
+		Livorno
+	</option>
+</select>
+```
+
+Etiqueta optgroup
+---
+
+Otra de las cosas que podemos realizar dentro de un combo es agrupar opciones. Si la lista de opciones es muy grande podemos utilizar el elemento **optgroup**. La sintaxis del elemento **optgroup** es la siguiente:
+
+```html
+<optgroup label="etiqueta"></optgroup>
+```
+
+Vamos a verlo con un ejemplo sencillo y así veis a lo que hacemos referencia.
+
+```html
+<select name="ciudad">
+  <optgroup label="Europa">
+    <option>Madrid</option>
+    <option>Londres</option>
+    <option>Paris</option>
+  </optgroup>
+  <optgroup label="Suramerica">
+    <option>Santiago</option>
+    <option>Sao Paulo</option>
+    <option>Lima</option>
+    <option>Bogota</option>
+  </optgroup>
+    <optgroup label="Africa">
+    <option>Casablanca</option>
+    <option>Ciudad del Cabo</option>
+  </optgroup>
+</select>
+```
+
+Input button
+---
+
+Una vez que hemos insertado campos de texto en nuestro formulario es hora de insertar botones. **Mediante los botones podremos realizar operaciones de envío del formulario**, de manipulación de datos, borrado,…
+
+Existen dos formas de insertar botones dentro de un formulario: el elemento input y el elemento button.La sintaxis para un botón mediante un elemento input será:
+
+```html
+<input type="button" value="TextoBotón"/>
+```
+
+Si bien, este botón no hace nada por sí solo y tendríamos que darle un comportamiento vía Javascript para que el botón tuviera funcionalidad.
+
+Para crear un botón que nos envíe los datos del formulario al servidor tenemos el tipo **submit**. Su sintaxis es la siguiente:
+
+```html
+<input type="submit" value="TextoBotón"/>
+```
+
+Una vez que pulsemos sobre el botón se enviarán los datos que el usuario haya insertado en el formulario.
+
+El otro tipo de botón con funcionalidad es el que nos permite el borrado de los datos del formulario. Para ello tenemos el tipo **reset**. La sintaxis de este botón será:
+
+```html
+<input type="reset" value="TextoBotón"/>
+```
+
+Cuando el usuario pulse sobre el botón de borrado. Todos los valores que el usuario haya insertado en el formulario se eliminarán.
